@@ -1,0 +1,409 @@
+.header {
+  position: relative;
+
+
+  border-bottom: 1px solid #ececec;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+
+.menu-button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+    display: inline-block;
+    position: fixed;
+    left: 87%;
+  z-index: 5;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+
+
+.menu-button.menu-button--is-open .icon-menu {
+  display: none;
+}
+
+.menu-button.menu-button--is-open .icon-cross {
+  display: block;
+}
+
+.inner-container {
+  @media screen and (max-width: 767px) {
+  position: absolute;
+  bottom: 0;
+  }
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-left: 40px;
+  height: auto;
+
+  cursor: pointer;
+  background-color: white;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+  }
+}
+
+.nav-container.nav-container--is-open {
+  @media screen and (max-width: 767px) {
+    display: block;
+    position: fixed;
+    z-index: 2;
+  }
+}
+
+/* Mobile Site nav */
+.nav {
+
+  @media screen and (max-width: 767px) {
+    margin-top: 48px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.nav__logo-link {
+  display: inline-block;
+  font-family: Raleway, sans-serif;
+  letter-spacing: 0.03em;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 0.86;
+  text-decoration: none;
+
+  color: #000000;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+  }
+}
+
+.nav__logo {
+  color: $accent-color;
+}
+
+.nav__list {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.02em;
+
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 0.85;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-right: 50px;
+  padding: 0;
+  cursor: pointer;
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav__item{
+    padding-bottom: 32px;
+  }
+
+  .nav__item:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.nav__link {
+  display: block;
+
+  text-decoration: none;
+  color: $primary-text-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.nav__link--current {
+  color: $accent-color;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__link--animation {
+    display: block;
+
+    position: relative;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+
+      background-color: $accent-color;
+    }
+
+    &:hover::after {
+      background-color: $accent-color;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav__link {
+      padding-top: 32px;
+      padding-bottom: 32px;
+  }
+}
+
+/* Mobile Auth nav */
+
+.auth-nav {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.02em;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 0.86;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 84px;
+
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    margin-left: 305px;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+.auth-nav__item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.auth-nav__link {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  color: #757575;
+
+  text-decoration: none;
+  transition: color $animation;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &:hover .auth-nav__icon,
+  .auth-nav__icon:focus {
+    color: $accent-color;
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .auth-nav__link:hover,
+  .auth-nav__link:focus {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.18;
+  }
+}
+
+.auth-nav__icon {
+  margin-right: 10px;
+  width: 16px;
+  height: 12px;
+  fill: #757575;
+  cursor: pointer;
+
+  transition: fill $animation;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+@media screen and (min-width: 768px) {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+ }
+}
+
+.header-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+  margin-top: 64px;
+  margin-bottom: 48px;
+  padding: 0;
+ 
+  text-decoration: none;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.header-socials__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header-socials__item:not(:last-child)::after {
+  content: "";
+
+  display: inline-block;
+
+  width: 1px;
+  height: 22px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  background-color: rgba(33, 33, 33, 0.2);
+}
+
+.header-socials__link {
+  text-decoration: none;
+  color: $accent-color;
+}
+
+.header-socials__icon {
+  margin-right: 10px;
+  margin-left: 10px;
+
+  color: rgba(33, 33, 33, 0.2);
+}
